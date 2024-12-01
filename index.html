@@ -8,11 +8,14 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     const root = document.getElementById("root");
+    // state가 바뀌면 컴포넌트가 리렌더링된다.
     function App() {
       let [counter, setCounter] = React.useState(0);
       const onClick = () => {
         setCounter(counter + 1);
       };
+      console.log("rendered");
+      console.log(counter);
       return (
         <div>
           <h3>Total clicks: {counter}</h3>
